@@ -21,7 +21,7 @@
     </div>
     <hr>
 
-    <div class="panel-default">
+    <div class="${message == null ? 'panel-default' : 'panel-success'}">
 
         <div class="panel-heading">
             <span>${message == null ? '&nbsp;' : message}</span>

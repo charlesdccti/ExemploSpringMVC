@@ -35,12 +35,10 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 		source.setBasename("messages");
 		return source;
 	}
-	
-//	@Override
-//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/bootstrap/");
-//	}
 
-	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/bootstrap/");
+	}
 	
 }
