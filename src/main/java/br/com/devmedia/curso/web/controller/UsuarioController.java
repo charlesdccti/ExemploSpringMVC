@@ -40,8 +40,10 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/save")
-	public String save(@ModelAttribute("usuario") Usuario usuario, RedirectAttributes attr) {
-
+	public String save(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result, RedirectAttributes attr) {
+		if(result.hasErrors()) {
+			return "/user/add";
+		}
 		dao.salvar(usuario);
 		attr.addFlashAttribute("message", "Usuário salvo com sucesso.");
 		return "redirect:/usuario/todos";
@@ -55,7 +57,10 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/update")
-	public ModelAndView update( @ModelAttribute("usuario") Usuario usuario, RedirectAttributes attr) {
+	public ModelAndView update(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result, RedirectAttributes attr) {
+		if(result.hasErrors()) {
+			return new ModelAndView("/user/add");
+		}
 		dao.editar(usuario);
 		attr.addFlashAttribute("message", "Usuário alterado com sucesso.");
 		return new ModelAndView("redirect:/usuario/todos");
