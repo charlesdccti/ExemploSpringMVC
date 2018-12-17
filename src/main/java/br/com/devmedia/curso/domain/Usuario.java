@@ -8,7 +8,11 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
-
+/**
+ * 
+ * @author charles
+ *
+ */
 public class Usuario {
 
 	private Long id;
