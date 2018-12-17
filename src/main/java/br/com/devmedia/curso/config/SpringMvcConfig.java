@@ -24,17 +24,17 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 		return resolver;
 	}
 	
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(new TipoSexoConverter());
+	}
+	
 	
 //	@Override
 //	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 //		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/bootstrap/");
 //	}
 
-//	@Override
-//	public void addFormatters(FormatterRegistry registry) {
-//		registry.addConverter(new TipoSexoConverter());
-//	}
-//	
 //	@Bean
 //	public MessageSource messageSource() {
 //		ResourceBundleMessageSource source = new ResourceBundleMessageSource();

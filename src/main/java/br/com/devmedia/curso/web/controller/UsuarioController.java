@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.devmedia.curso.dao.UsuarioDao;
 import br.com.devmedia.curso.domain.TipoSexo;
 import br.com.devmedia.curso.domain.Usuario;
+import br.com.devmedia.curso.web.conversor.TipoSexoConverter;
 
 @Controller
 @RequestMapping("usuario")
@@ -34,6 +35,7 @@ public class UsuarioController {
 	
 	@GetMapping("/cadastro")
 	public String cadastro(@ModelAttribute("usuario") Usuario usuario, ModelMap model) {
+		model.addAttribute("sexos", TipoSexo.values());
 		return "/user/add";
 	}
 	
