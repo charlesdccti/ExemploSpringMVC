@@ -10,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 /**
  * 
- * @author charles
+ * @author charles Ferreira
  *
  */
 public class Usuario {
