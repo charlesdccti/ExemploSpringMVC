@@ -10,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 /**
  * 
- * @author charles Ferreira
+ * @author charles
  *
  */
 public class Usuario {
@@ -102,7 +102,5 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + "]";
-	}
-	
-	
+	}	
 }
